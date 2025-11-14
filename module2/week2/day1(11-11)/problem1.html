@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      background-color: #0d6efd;
+      color: white;
+      padding: 20px 10px;
+    }
+    header img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    form {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    form h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin: 8px 0 5px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+    legend {
+      font-weight: bold;
+    }
+    input[type="radio"] {
+      margin-right: 6px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    input[type="submit"]:hover {
+      background-color: #0b5ed7;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #e9ecef;
+      font-size: 14px;
+    }
+    footer a {
+      color: #0d6efd;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 480px) {
+      form {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Welcome_sign.svg/1200px-Welcome_sign.svg.png" alt="Welcome Image">
+    <h1>Welcome to WebConnect</h1>
+    <p>Join our community to stay updated with the latest web trends and tutorials!</p>
+  </header>
+
+  <main>
+    <form action="#" method="post">
+      <h2>Signup Form</h2>
+
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <fieldset>
+        <legend>Gender</legend>
+        <label><input type="radio" name="gender" value="male" required> Male</label>
+        <label><input type="radio" name="gender" value="female" required> Female</label>
+        <label><input type="radio" name="gender" value="other" required> Other</label>
+      </fieldset>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" placeholder="Enter your age" required>
+
+      <input type="submit" value="Signup">
+    </form>
+  </main>
+
+  <footer>
+    <p>Want to know more? <a href="https://www.google.com" target="_blank">Click here</a></p>
+    <p>&copy; 2025 WebConnect. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

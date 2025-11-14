@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Report Card</title>
+  <style>
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      background-color: #0d6efd;
+      color: white;
+      padding: 20px 0;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 15px;
+    }
+    section.info {
+      text-align: center;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 600px;
+      margin-bottom: 25px;
+    }
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 2px solid #ccc;
+    }
+    table {
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 700px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+      border: 1px solid #aaa;
+      text-align: center;
+      padding: 10px;
+    }
+    th {
+      background-color: #e9ecef;
+    }
+    tfoot td {
+      font-weight: bold;
+      text-align: left;
+      padding: 10px 20px;
+    }
+    aside {
+      margin: 20px auto;
+      max-width: 700px;
+      background-color: #fff3cd;
+      padding: 15px;
+      border-left: 5px solid #ffc107;
+      border-radius: 5px;
+      font-style: italic;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #e9ecef;
+    }
+    button {
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0b5ed7;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Montessori High School</h1>
+    <h2>Annual Report Card</h2>
+  </header>
+
+  <main>
+    <section class="info">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" alt="Profile Picture" class="profile-pic">
+      <h3>Name: Rishitha</h3>
+      <h3>Gender: Female</h3>
+      <h3>Class: 10</h3>
+      <h3>Section: A</h3>
+      <h3>Academic Year: 2019-2020</h3>
+    </section>
+
+    <section class="marks">
+      <table>
+        <tr>
+          <th>Subject</th>
+          <th>Marks Obtained</th>
+          <th>Maximum Marks</th>
+        </tr>
+        <tr>
+          <td>English</td>
+          <td>90</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Mathematics</td>
+          <td>85</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Science</td>
+          <td>88</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Social Studies</td>
+          <td>92</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Hindi</td>
+          <td>95</td>
+          <td>100</td>
+        </tr>
+        <tfoot>
+          <tr>
+            <td colspan="2">Total Marks: Four Hundred Fifty Out of Five Hundred</td>
+            <td>Signature: ____________________</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <aside>
+      “Rahul has shown excellent academic progress throughout the year. Keep up the great work!”
+    </aside>
+  </main>
+
+  <footer>
+    <button>Print Report Card</button>
+    <p>&copy; 2025 ABC High School. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
