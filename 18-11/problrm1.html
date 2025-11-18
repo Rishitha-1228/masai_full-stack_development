@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        .container {
+            width: 450px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .box {
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Colors for each box */
+        .b1 { background: #00BCD4; }  /* Blue-ish */
+        .b2 { background: #F44336; }  /* Red */
+        .b3 { background: #2196F3; }  /* Blue */
+        .b4 { background: #FFB300; }  /* Yellow-ish */
+        .b5 { background: #7E57C2; }  /* Purple */
+        .b6 { background: #4CAF50; }  /* Green */
+        .b7 { background: #EF6C00; }  /* Orange */
+        .b8 { background: #26A69A; }  /* Teal */
+        .b9 { background: #8B0000; }  /* Dark Red */
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box b7">7.</div>
+        <div class="box b5">5.</div>
+        <div class="box b2">2.</div>
+        <div class="box b8">8.</div>
+        <div class="box b6">6.</div>
+        <div class="box b3">3.</div>
+        <div class="box b9">9.</div>
+        <div class="box b1">1.</div>
+        <div class="box b4">4.</div>
+    </div>
+
+</body>
+</html>

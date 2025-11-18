@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Schedule</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS is included here for simplicity. Ideally, this would be in a separate style.css file. */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff; /* Light background */
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: cursive; /* Using a cursive-like font for the title */
+            color: #ff69b4; /* Pink title color */
+            margin: 20px 0 30px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .weekly-schedule {
+            display: grid;
+            /* 1 column for time + 5 columns for days (Mon-Fri) */
+            grid-template-columns: 80px repeat(5, 1fr);
+            /* 1 row for headers + 6 rows for time slots (08:00 to 13:00) */
+            grid-template-rows: 50px repeat(6, 60px); 
+            gap: 5px;
+            max-width: 900px;
+            width: 95%;
+            background-color: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling for all grid items */
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* 1. Header (Day) Cells */
+        .day-header {
+            background-color: #ffccdd; /* Light Pink for headers */
+            color: #8b008b; /* Darker text */
+            font-size: 1.1em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* The empty corner cell above the times */
+        .empty-cell {
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        /* 2. Time Header Cells */
+        .time-header {
+            background-color: #add8e6; /* Light Blue/Cyan for time headers */
+            color: #00008b; /* Dark Blue text */
+        }
+
+        /* 3. Schedule Cells (The main time slots) */
+        .schedule-cell {
+            font-weight: normal;
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        /* Alternating row colors for visual distinction */
+        .row-pink {
+            background-color: #ffebf0; /* Very light pink */
+        }
+
+        .row-yellow {
+            background-color: #fffacd; /* Very light yellow */
+        }
+
+        /* Assigning colors to specific cells based on their grid position */
+        /* Monday (Col 2) / Wednesday (Col 4) / Friday (Col 6) -> Pink in the image */
+        .weekly-schedule > div:nth-child(6n + 2), 
+        .weekly-schedule > div:nth-child(6n + 4), 
+        .weekly-schedule > div:nth-child(6n + 6) {
+            background-color: #ffebf0; /* Pink background */
+        }
+
+        /* Tuesday (Col 3) / Thursday (Col 5) -> Yellow in the image */
+        .weekly-schedule > div:nth-child(6n + 3), 
+        .weekly-schedule > div:nth-child(6n + 5) {
+            background-color: #fffacd; /* Yellow background */
+        }
+
+        /* Override the first column cells (Times) to keep their blue color */
+        .time-header {
+            background-color: #add8e6 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Weekly schedule</h1>
+    
+    <div class="weekly-schedule">
+        <div class="grid-item empty-cell"></div>
+        <div class="grid-item day-header">Monday</div>
+        <div class="grid-item day-header">Tuesday</div>
+        <div class="grid-item day-header">Wednesday</div>
+        <div class="grid-item day-header">Thursday</div>
+        <div class="grid-item day-header">Friday</div>
+
+        <div class="grid-item time-header">08:00</div>
+        <div class="grid-item schedule-cell">English</div>
+        <div class="grid-item schedule-cell">Maths</div>
+        <div class="grid-item schedule-cell">EVS</div>
+        <div class="grid-item schedule-cell">PT</div>
+        <div class="grid-item schedule-cell">Art</div>
+        
+        <div class="grid-item time-header">09:00</div>
+        <div class="grid-item schedule-cell">Maths</div>
+        <div class="grid-item schedule-cell">EVS</div>
+        <div class="grid-item schedule-cell">English</div>
+        <div class="grid-item schedule-cell">Hindi</div>
+        <div class="grid-item schedule-cell">Library</div>
+
+        <div class="grid-item time-header">10:00</div>
+        <div class="grid-item schedule-cell">Break</div>
+        <div class="grid-item schedule-cell">Break</div>
+        <div class="grid-item schedule-cell">Break</div>
+        <div class="grid-item schedule-cell">Break</div>
+        <div class="grid-item schedule-cell">Break</div>
+
+        <div class="grid-item time-header">11:00</div>
+        <div class="grid-item schedule-cell">Science</div>
+        <div class="grid-item schedule-cell">Hindi</div>
+        <div class="grid-item schedule-cell">Maths</div>
+        <div class="grid-item schedule-cell">Science</div>
+        <div class="grid-item schedule-cell">EVS</div>
+
+        <div class="grid-item time-header">12:00</div>
+        <div class="grid-item schedule-cell">S.Studies</div>
+        <div class="grid-item schedule-cell">Art</div>
+        <div class="grid-item schedule-cell">PT</div>
+        <div class="grid-item schedule-cell">S.Studies</div>
+        <div class="grid-item schedule-cell">Music</div>
+
+        <div class="grid-item time-header">13:00</div>
+        <div class="grid-item schedule-cell">Homework</div>
+        <div class="grid-item schedule-cell">Exam Prep</div>
+        <div class="grid-item schedule-cell">Reading</div>
+        <div class="grid-item schedule-cell">Projects</div>
+        <div class="grid-item schedule-cell">Assembly</div>
+    </div>
+
+</body>
+</html>
