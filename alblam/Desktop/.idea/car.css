@@ -1,0 +1,17 @@
+*
+{margin: 0;
+padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+}
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    background-color: whitesmoke;
+    column-gap: 220px;
+}
+.nav .item {
+    display: flex;
+    column-gap: 20px;
+}

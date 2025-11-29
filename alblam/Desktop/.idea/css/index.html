@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+   h1{ color:red;
+    background-color:blue;
+   }
+
+.luck{
+    color:blueviolet;
+}
+#sonu{
+    color:yellow;
+}
+
+</style>
+<link rel="stylesheet" href="./sonu.css">
+
+</head>
+<body>
+   <h1> welcome back  to css</h1> 
+   <h1> 2nd heading</h1>
+
+<h2 class="luck"> this is class we have to use .</h2>
+
+<h2 id="sonu"> this is another by using#</h2>
+<h3 class="aishu"> hiiiiiii</h3>
+<div class="aishu">
+    <p> hello</p>
+    <p> hello</p>
+    <p> hello</p>
+    <p> hello</p>
+    <p> hello</p>
+    <p> hello</p>
+    <p> hello</p>
+    <p> hello</p>
+    <p> hello</p>
+    <p> hello</p>
+    </div>
+   
+        <header>
+            <h1>My Shop</h1>
+            <nav>
+                <a href="#catalog">Catalog</a>
+                <a href="#cart">Cart</a>
+                <a href="#register">Register</a>
+                <a href="#login">Login</a>
+            </nav>
+        </header>
+    
+        <main>
+            <section id="catalog">
+                <h2>Product Catalog</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="Laptop.jpg" width="100px" alt="Product 1">
+                        <h3>HP Laptop</h3>
+                        <p>$2000.00</p>
+                        <button onclick="addToCart('Product 1', 2000)">Add to Cart</button>
+                    </div>
+                    <!-- Repeat for more products -->
+                </div>
+            </section>
+    
+            <section id="cart">
+                <h2>Your Cart</h2>
+                <div id="cart-items"></div>
+                <button onclick="checkout()">Checkout</button>
+            </section>
+    
+            
+            <section id="register">
+                <h2>Register</h2>
+                <form onsubmit="handleRegister(event)">
+                    <input type="text" placeholder="Username" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Register</button>
+                </form>
+            </section>
+            
+            <section id="login">
+                <h2>Login</h2>
+                <form onsubmit="handleLogin(event)">
+                    <input type="text" placeholder="Username" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </section>
+        </main>
+    
+        <footer>
+            <p>&copy; 2024 My Shop</p>
+        </footer>
+    
+        <script src="script.js"></script>
+    
+    
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

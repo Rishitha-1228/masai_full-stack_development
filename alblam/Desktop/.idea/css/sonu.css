@@ -1,0 +1,55 @@
+.aishu{
+    color: aqua;
+    font-family: monospace;
+    font: optional;
+}
+.box{
+width: 300px;
+height: 200px;
+border: 2px solid gray;
+background-color: blue;
+color: white;
+padding: 10px;
+}
+
+.food-card{
+width:300px ;
+background-color: blue;
+border: 4px;
+padding: 20px;
+font-family: fantasy;
+margin: bottom 2px;
+
+}
+
+.btm{
+border:none ;
+padding: 40px;
+background-color: tomato;
+cursor: pointer;
+
+
+
+}
+
+.yellow{
+background-color: yellow;
+margin:20px ;
+border-radius: 10px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+padding-top: 0vi;
+padding: 50px 50px;
+height: 350;
+}
+
+.yellow-buttom{
+    border-radius:30px ;
+padding: 16px 70px;
+border:  navajowhite;
+font-weight: bolder;
+font-size:20px ;
+
+}
+
+
+
