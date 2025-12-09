@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book Management App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Add New Book</h2>
+      <form id="addBookForm" autocomplete="off">
+        <label>
+          <span>Title</span>
+          <input type="text" id="title" placeholder="E.g., Atomic Habits" required />
+        </label>
+        <label>
+          <span>Author</span>
+          <input type="text" id="author" placeholder="E.g., James Clear" required />
+        </label>
+        <label>
+          <span>Price (₹)</span>
+          <input type="number" id="price" placeholder="E.g., 499" min="0" required />
+        </label>
+        <label>
+          <span>Image URL</span>
+          <input type="url" id="imageURL" placeholder="https://..." required />
+        </label>
+        <button type="submit" class="btn primary">Add Book</button>
+      </form>
+
+      <hr />
+
+      <!-- Optional: seed button to add dummy data once -->
+      <button id="seedBtn" class="btn outline">Insert Dummy Books</button>
+      <p class="hint">Run once to quickly add 5–6 sample books.</p>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="header">
+        <h1>Book Collection</h1>
+        <input id="searchInput" class="search" type="search" placeholder="Search by title or author..." />
+      </header>
+
+      <section id="bookList" class="book-grid" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <!-- Modal for "View Details" -->
+  <div id="detailsModal" class="modal" aria-hidden="true">
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" id="modalClose" aria-label="Close">&times;</button>
+      <div class="modal__content">
+        <img id="modalImage" alt="" />
+        <div class="modal__info">
+          <h2 id="modalTitle"></h2>
+          <p><strong>Author:</strong> <span id="modalAuthor"></span></p>
+          <p><strong>Price:</strong> ₹<span id="modalPrice"></span></p>
+          <p><strong>Document ID:</strong> <span id="modalId"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase (compat builds so legacy API works) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+  <!-- App scripts -->
+  <script src="firebaseConfig.js"></script>
+  <script src="seed.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
