@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI-Powered Daily Time Tracking</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <!-- Landing / Auth -->
+    <section id="landing" class="card">
+      <div class="brand">
+        <span class="dot online"></span>
+        <h1>TimeTrack<span class="accent">AI</span></h1>
+      </div>
+      <p class="muted">Log your day in minutes and analyse where your 24 hours go — securely.</p>
+
+      <div class="auth-actions">
+        <button id="googleSignIn" class="btn primary">Continue with Google</button>
+        <div class="divider"><span>or</span></div>
+        <form id="emailForm" class="grid">
+          <input id="email" type="email" placeholder="Email" required />
+          <input id="password" type="password" placeholder="Password" required />
+          <div class="row">
+            <button id="emailSignIn" class="btn">Sign in</button>
+            <button id="emailSignUp" type="button" class="btn outline">Create account</button>
+          </div>
+        </form>
+      </div>
+
+      <footer class="tiny">Built with Firebase + Chart.js. Design assisted by AI.</footer>
+    </section>
+
+    <!-- App Shell -->
+    <section id="appShell" class="hidden">
+      <header class="shell-header">
+        <div class="brand small">
+          <span class="dot online"></span>
+          <h2>TimeTrack<span class="accent">AI</span></h2>
+        </div>
+        <div class="spacer"></div>
+        <div class="userbar">
+          <span id="userEmail" class="muted"></span>
+          <button id="signOut" class="btn danger">Sign out</button>
+        </div>
+      </header>
+
+      <nav class="tabs">
+        <button data-tab="log" class="tab active">Log Activities</button>
+        <button data-tab="dash" class="tab">Dashboard</button>
+      </nav>
+
+      <main class="shell-main">
+        <!-- Left panel: log -->
+        <section id="tab-log" class="tabview">
+          <div class="controls card">
+            <label class="row">
+              <span class="label">Date</span>
+              <input id="logDate" type="date" />
+            </label>
+
+            <form id="activityForm" class="grid">
+              <input id="actTitle" type="text" placeholder="Activity (e.g., Study DSA)" required />
+              <select id="actCategory">
+                <option>Work</option>
+                <option>Study</option>
+                <option>Sleep</option>
+                <option>Entertainment</option>
+                <option>Exercise</option>
+                <option>Chores</option>
+                <option>Other</option>
+              </select>
+              <input id="actMinutes" type="number" min="1" max="1440" placeholder="Minutes" required />
+              <button class="btn primary">Add</button>
+            </form>
+
+            <div class="row wrap">
+              <span id="remaining" class="chip">Remaining: 1440 min</span>
+              <span id="total" class="chip">Total: 0 min</span>
+              <button id="analyseBtn" class="btn success" disabled>Analyse</button>
+            </div>
+          </div>
+
+          <div id="activities" class="card">
+            <h3 class="section-title">Activities</h3>
+            <ul id="activityList" class="list"></ul>
+            <div id="emptyList" class="empty muted hidden">No activities yet. Add your first entry above.</div>
+          </div>
+        </section>
+
+        <!-- Right panel: dashboard -->
+        <section id="tab-dash" class="tabview hidden">
+          <div class="controls card row wrap">
+            <label class="row">
+              <span class="label">Date</span>
+              <input id="dashDate" type="date" />
+            </label>
+            <div class="spacer"></div>
+            <button id="refreshDash" class="btn">Refresh</button>
+          </div>
+
+          <div id="noData" class="card center hidden">
+            <img src="assets/no-data.svg" alt="No data" class="empty-illustration" />
+            <h3>No data available</h3>
+            <p class="muted">Start logging your day to unlock insights.</p>
+          </div>
+
+          <div id="dashContent" class="grid2 hidden">
+            <div class="card">
+              <h3 class="section-title">Summary</h3>
+              <div class="stats">
+                <div class="stat"><span id="sumTotal">0h</span><label>Total Time</label></div>
+                <div class="stat"><span id="sumActivities">0</span><label># Activities</label></div>
+                <div class="stat"><span id="sumCategories">0</span><label># Categories</label></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 class="section-title">By Category</h3>
+              <canvas id="pie"></canvas>
+            </div>
+
+            <div class="card span2">
+              <h3 class="section-title">Activity Durations</h3>
+              <canvas id="bar"></canvas>
+            </div>
+          </div>
+        </section>
+      </main>
+    </section>
+  </div>
+
+  <!-- Firebase compat builds -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <script src="firebaseConfig.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
