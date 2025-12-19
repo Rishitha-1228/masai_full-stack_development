@@ -1,0 +1,12 @@
+## a) Component Lifecycle in React Functional Components
+
+In React functional components, lifecycle behavior is handled using the `useEffect` hook.
+
+### Mount Phase
+The mount phase occurs when a component is rendered for the first time.
+
+```js
+useEffect(() => {
+  // runs once when component mounts
+}, []);
+q
