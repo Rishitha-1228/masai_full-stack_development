@@ -1,12 +1,11 @@
-import Counter from "./components/Counter";
+import UserData from "./components/UserData";
 
 function App() {
   return (
-    <div style={{ textAlign: "center", marginTop: "40px" }}>
-      <Counter />
+    <div style={{ marginTop: "40px", textAlign: "center" }}>
+      <UserData />
     </div>
   );
 }
 
 export default App;
-

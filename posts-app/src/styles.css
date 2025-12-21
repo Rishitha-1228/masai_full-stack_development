@@ -1,0 +1,23 @@
+.light {
+  background: #f5f5f5;
+  color: #000;
+}
+
+.dark {
+  background: #121212;
+  color: #fff;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+.card {
+  padding: 16px;
+  border-radius: 8px;
+  background: inherit;
+  border: 1px solid gray;
+}
