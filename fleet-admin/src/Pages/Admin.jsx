@@ -1,28 +1,27 @@
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
-import FleetCard from "../components/FleetCard";
-import { useState } from "react";
+import Navbar from '../components/Navbar';
+import Sidebar from '../components/Sidebar';
+import FleetCard from '../components/FleetCard';
 
-const Admin = () => {
-  const [fleet, setFleet] = useState([]);
-
-  const addFleet = (data) => {
-    setFleet([...fleet, data]);
-  };
-
+function Admin({ fleets, addFleet, updateFleet, deleteFleet, logout }) {
   return (
     <div>
-      <Navbar />
-      <div style={{ display: "flex" }}>
+      <Navbar logout={logout} />
+      <div style={{ display: 'flex' }}>
         <Sidebar addFleet={addFleet} />
-        <div style={{ padding: "20px", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
-          {fleet.map((item) => (
-            <FleetCard key={item.id} data={item} />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', flex: 1 }}>
+          {fleets.map((fleet, index) => (
+            <FleetCard
+              key={index}
+              fleet={fleet}
+              index={index}
+              updateFleet={updateFleet}
+              deleteFleet={deleteFleet}
+            />
           ))}
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Admin;

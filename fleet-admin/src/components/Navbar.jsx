@@ -1,9 +1,10 @@
-const Navbar = () => {
+function Navbar({ logout }) {
   return (
-    <div style={{ padding: "15px", background: "#222", color: "white" }}>
-      Fleet Management Dashboard
-    </div>
+    <nav>
+      <h1>Fleet Management</h1>
+      <button onClick={logout}>Logout</button>
+    </nav>
   );
-};
+}
 
 export default Navbar;

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tailwind CSS Assignment</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <nav class="bg-white shadow p-4 flex flex-col md:flex-row md:space-x-6">
+  <a href="#" class="hover:text-blue-600">Home</a>
+  <a href="#" class="hover:text-blue-600">Features</a>
+  <a href="#" class="hover:text-blue-600">Contact</a>
+</nav>
+
+
+
+<section class="p-6">
+  <button class="bg-gray-200 px-6 py-2 rounded-lg 
+                 hover:bg-gray-300 
+                 active:bg-gray-400 
+                 transition">
+    Click Me
+  </button>
+</section>
+<section class="p-6">
+  <div class="w-64 overflow-hidden rounded-xl shadow-lg">
+    <img src="https://via.placeholder.com/300"
+         class="hover:scale-105 transition-transform duration-300"
+         alt="Image"/>
+  </div>
+</section>
+<section class="p-6">
+  <h2 class="font-bold text-xl md:text-3xl lg:text-5xl
+             bg-gradient-to-r from-blue-500 to-purple-600
+             text-transparent bg-clip-text">
+    Responsive Gradient Text
+  </h2>
+</section>
+<section class="p-6">
+  <ul class="list-disc list-inside pl-5 space-y-2">
+    <li class="hover:text-blue-600">HTML</li>
+    <li class="hover:text-blue-600">CSS</li>
+    <li class="hover:text-blue-600">Tailwind</li>
+  </ul>
+</section>
+<section class="p-6">
+  <div class="bg-white rounded-xl shadow-lg p-4 w-72">
+    <img src="https://via.placeholder.com/300" class="rounded-lg mb-4"/>
+    <h3 class="text-xl font-semibold mb-2">Card Title</h3>
+    <p class="text-gray-600 mb-4">This is a Tailwind card.</p>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+      Read More
+    </button>
+  </div>
+</section>
+<section class="p-6 overflow-x-auto">
+  <table class="w-full border border-gray-300">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="border p-2">Name</th>
+        <th class="border p-2">Role</th>
+        <th class="border p-2">Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="hover:bg-gray-100">
+        <td class="border p-2">A</td>
+        <td class="border p-2">Dev</td>
+        <td class="border p-2">Active</td>
+      </tr>
+      <tr class="bg-gray-50 hover:bg-gray-100">
+        <td class="border p-2">B</td>
+        <td class="border p-2">Design</td>
+        <td class="border p-2">Inactive</td>
+      </tr>
+      <tr class="hover:bg-gray-100">
+        <td class="border p-2">C</td>
+        <td class="border p-2">Test</td>
+        <td class="border p-2">Active</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section class="p-6">
+  <form class="bg-white p-6 rounded-xl shadow-lg max-w-md space-y-4">
+    <input type="text" placeholder="Name"
+      class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400"/>
+
+    <input type="email" placeholder="Email"
+      class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400"/>
+
+    <input type="password" placeholder="Password"
+      class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400"/>
+
+    <button class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+      Submit
+    </button>
+  </form>
+</section>
+<section class="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="bg-white p-4 rounded shadow">Card 1</div>
+  <div class="bg-white p-4 rounded shadow">Card 2</div>
+  <div class="bg-white p-4 rounded shadow">Card 3</div>
+  <div class="bg-white p-4 rounded shadow">Card 4</div>
+  <div class="bg-white p-4 rounded shadow">Card 5</div>
+  <div class="bg-white p-4 rounded shadow">Card 6</div>
+</section>
+<section class="p-6 space-y-10">
+
+  <div class="grid md:grid-cols-2 gap-6 items-center">
+    <h1 class="text-4xl font-bold">Hero Section</h1>
+    <img src="https://via.placeholder.com/400" class="rounded-lg shadow-lg"/>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-white p-4 rounded shadow">Feature 1</div>
+    <div class="bg-white p-4 rounded shadow">Feature 2</div>
+    <div class="bg-white p-4 rounded shadow">Feature 3</div>
+  </div>
+
+</section>
+
+  
+</body>
+</html>
