@@ -1,0 +1,205 @@
+----------------------------------
+Query 1: Count total students
+----------------------------------
+SQL:
+SELECT COUNT(*) AS total_students
+FROM students;
+
+Output:
+total_students
+--------------
+6
+
+
+----------------------------------
+Query 2: Average age of students
+----------------------------------
+SQL:
+SELECT AVG(age) AS average_age
+FROM students;
+
+Output:
+average_age
+------------
+21.5
+# Database Relationships
+
+## 1. Definition of Database Relationship
+
+A **database relationship** defines how two or more tables in a database are connected to each other using keys (primary key and foreign key). Relationships help maintain **data integrity**, reduce **data redundancy**, and allow databases to represent **real‑world connections** between different entities.
+
+In relational databases, relationships are usually established using:
+
+* **Primary Key (PK)** – uniquely identifies a record in a table
+* **Foreign Key (FK)** – references the primary key of another table
+
+---
+
+## 2. Types of Database Relationships
+
+There are three main types of database relationships:
+
+1. One-to-One (1:1)
+2. One-to-Many (1:N)
+3. Many-to-Many (M:N)
+
+Each of these is explained below with **e‑commerce examples**.
+
+---
+
+## 3. One-to-One (1:1) Relationship
+
+### Definition
+
+In a **one-to-one relationship**, one record in Table A is associated with **only one** record in Table B, and vice versa.
+
+### E-commerce Example
+
+**User ↔ User_Profile**
+
+* One user has only one profile
+* One profile belongs to only one user
+
+### Tables
+
+**users**
+
+* user_id (PK)
+* email
+* password
+
+**user_profiles**
+
+* profile_id (PK)
+* user_id (FK)
+* address
+* phone
+
+### Diagram
+
+```
+users            user_profiles
+---------        ----------------
+user_id  PK  ───▶ user_id  FK
+email             address
+password          phone
+```
+
+### Use Case
+
+Used when optional or sensitive data should be stored separately for **security or performance** reasons.
+
+---
+
+## 4. One-to-Many (1:N) Relationship
+
+### Definition
+
+In a **one-to-many relationship**, one record in Table A can be related to **many records** in Table B, but each record in Table B relates to only one record in Table A.
+
+### E-commerce Example
+
+**Customer ↔ Orders**
+
+* One customer can place many orders
+* Each order belongs to only one customer
+
+### Tables
+
+**customers**
+
+* customer_id (PK)
+* name
+* email
+
+**orders**
+
+* order_id (PK)
+* customer_id (FK)
+* order_date
+* total_amount
+
+### Diagram
+
+```
+customers          orders
+------------       ----------------
+customer_id PK ───▶ customer_id FK
+name               order_id
+email              order_date
+                   total_amount
+```
+
+### Use Case
+
+This is the **most common relationship** in e‑commerce systems (customers–orders, categories–products, sellers–products).
+
+---
+
+## 5. Many-to-Many (M:N) Relationship
+
+### Definition
+
+In a **many-to-many relationship**, multiple records in Table A can relate to multiple records in Table B.
+
+This relationship is implemented using a **junction (bridge) table**.
+
+### E-commerce Example
+
+**Orders ↔ Products**
+
+* One order can contain many products
+* One product can appear in many orders
+
+### Tables
+
+**orders**
+
+* order_id (PK)
+
+**products**
+
+* product_id (PK)
+* name
+* price
+
+**order_items (junction table)**
+
+* order_id (FK)
+* product_id (FK)
+* quantity
+
+### Diagram
+
+```
+orders        order_items        products
+-------       ------------       -----------
+order_id PK ─▶ order_id  FK
+              product_id FK ───▶ product_id PK
+              quantity            name
+                                   price
+```
+
+### Use Case
+
+Used for **shopping carts, orders & products, students & courses**, etc.
+
+---
+
+## 6. Summary Table
+
+| Relationship Type | Description                      | E-commerce Example |
+| ----------------- | -------------------------------- | ------------------ |
+| One-to-One        | One record maps to one record    | User – Profile     |
+| One-to-Many       | One record maps to many records  | Customer – Orders  |
+| Many-to-Many      | Many records map to many records | Orders – Products  |
+
+---
+
+## 7. Conclusion
+
+Database relationships are a core concept in relational database design. In an e‑commerce application, they help efficiently manage customers, orders, products, payments, and profiles. Choosing the correct relationship type ensures **scalability**, **data consistency**, and **easy querying**.
+
+---
+
+**File Name:** `answer.md`
